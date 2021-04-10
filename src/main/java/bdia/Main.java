@@ -16,7 +16,7 @@ public class Main {
 
         try(Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost/maas","jee","jee")){
             try(Statement stmt = conn.createStatement()){
-                try(ResultSet rs = stmt.executeQuery("select * from profiles")){
+                try(ResultSet rs = stmt.executeQuery("select * from profiles where ...")){
                     while (rs.next()){
                         System.out.println(rs.getString("email")+" "+rs.getString("first_name"));
                     }
